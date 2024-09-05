@@ -1,0 +1,10 @@
+.App {
+    header {
+        position: sticky;
+        top: 0;
+        
+        &.sticky {
+            border-bottom: 1px solid #ccc
+        }
+    }
+}
