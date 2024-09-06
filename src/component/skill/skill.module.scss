@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    gap: 50px;
+
+    .skills {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .icon {
+            font-size: 60px;
+        }
+    }
+}

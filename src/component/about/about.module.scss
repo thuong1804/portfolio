@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            padding: 5px 19px;
+            font-weight: 500;
+            font-size: 14px;
+            background-color: #e5e7eb;
+            border-radius: 15px;
+        }
+    }
+
+    .card {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: start;
+
+        .containerImg {
+            position: relative;
+
+            .img {
+                position: absolute;
+                left: 50px;
+                z-index: 999;
+                background-color: white;
+                padding: 5px 10px;
+                object-fit: cover;
+                top: 10px;
+            }
+
+            .photoShawdow {
+                width: 400px;
+                height: 480px;
+                position: absolute;
+                top: 60px;
+                background-color: #e5e7eb;
+            }
+
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 576px;
+
+            h1 {
+                margin: 0;
+                color: #111827;
+            }
+
+            p {
+                margin: 0;
+                line-height: 24px;
+                font-size: 16px;
+            }
+
+
+            .titleDescription {
+                display: flex;
+                gap: 30px;
+            }
+        }
+    }
+}

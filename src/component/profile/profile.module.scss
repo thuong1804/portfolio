@@ -1,0 +1,116 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+
+    .cardInfo {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        .headInfo {
+            h1 {
+                margin: 0;
+                font-size: 3.75rem;
+                color: rgb(17 24 39);
+    
+                .icon {
+                    color: rgb(255 200 61);
+                    animation: wave-hand 1.5s ease-in-out infinite;
+                    transform-origin: 70% 70%;
+    
+                    @keyframes wave-hand {
+                        0% {
+                          transform: rotate(0deg);
+                        }
+                        25% {
+                          transform: rotate(15deg);
+                        }
+                        50% {
+                          transform: rotate(-10deg);
+                        }
+                        75% {
+                          transform: rotate(10deg);
+                        }
+                        100% {
+                          transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+    
+            p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .containerDetail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .detail {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                p {
+                    margin: 0;
+                }
+    
+                .iconLocation {
+                    color: gray;
+
+                }
+                .iconStatus {
+                    color: rgb(52 211 153);
+                    font-size: 13px;
+                    
+                }
+            }
+        }
+
+        .contactLink {
+            display: flex;
+            gap: 10px;
+            a {
+                .itemIcon {
+                    color: gray;
+                    font-size: 30px;
+                    padding: 0 5px;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: rgb(245, 239, 239);
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+       
+    }
+
+    .avatar {
+        position: relative;
+
+        .containerImg {
+            position: absolute;
+            border: none;
+            background-color: #ffffff;
+            padding: 5px;
+            z-index: 999;
+            right: 40px;
+            top: 0;
+        }
+
+        .photoShawdow {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            width: 280px;
+            height: 320px;
+            background-color: #e5e7eb;
+        }
+    }
+}

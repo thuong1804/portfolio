@@ -1,12 +1,10 @@
 import './App.scss';
 import React, { useState, useEffect } from 'react'
 
-import HeaderPage from './component/layout/header';
-import ContentPage from './component/content';
-import FooterPage from './component/layout/footer';
 import clsx from 'clsx';
-import MainLayout from './component/layout/main';
-import ProfilePage from './component/content/profile/profile';
+import MainLayout from './layout/main';
+import HeaderLayout from './layout/header';
+import FooterLayout from './layout/footer';
 
 function App() {
     const [sticky, setSticky] = useState(false)
@@ -29,15 +27,13 @@ function App() {
     return (
         <div className="App">
             <header className={clsx({sticky: sticky})}>
-                <HeaderPage />
+                <HeaderLayout/>
             </header>
             <main>
-                <MainLayout>
-                    <ProfilePage />
-                </MainLayout>
+                <MainLayout />
             </main>
             <footer>
-                <FooterPage />
+                <FooterLayout />
             </footer>
         </div>
     );

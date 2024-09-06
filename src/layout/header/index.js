@@ -1,7 +1,7 @@
 import Navbar from '../navbar';
 import styles from './index.module.scss'
 
-const HeaderPage = () => {
+const HeaderLayout = () => {
 
     return (
         <div className={styles.container}>
@@ -12,4 +12,4 @@ const HeaderPage = () => {
         </div>
     )
 }
-export default HeaderPage;
+export default HeaderLayout;
