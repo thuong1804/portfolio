@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    background-color: rgb(249 250 251);
+
+    .left {
+        border-right: 1px solid;
+        padding-right: 5px;
+    }
+
+    .link {
+        margin-top: 1px;
+        color: rgb(144 150 159);
+    }
+}
