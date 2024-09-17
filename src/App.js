@@ -5,11 +5,13 @@ import clsx from 'clsx';
 import MainLayout from './layout/main';
 import HeaderLayout from './layout/header';
 import FooterLayout from './layout/footer';
+import { useMode } from './context/useMode';
 
 function App() {
     const [sticky, setSticky] = useState(false)
     const [sections, setSection] = useState();
-    
+    const {theme} = useMode()
+
     const handelScroll = () => {
         if (window.scrollY > 0) {
             setSticky(true)
@@ -39,11 +41,9 @@ function App() {
         setSection({refProps})
     }
 
-    console.log({sections})
-
     return (
         <div className="App">
-            <header className={clsx({sticky: sticky})}>
+            <header className={clsx(theme, {sticky: sticky})}>
                 <HeaderLayout onClick={onClickScrollItem}/>
             </header>
             <main>

@@ -4,8 +4,16 @@
         background-color: #fff;
     }
 
+    &.black {
+        background-color: rgb(3 7 18);
+    }
+
     &.gray {
         background-color: rgb(249 250 251);
+    }
+    
+    &.blue {
+        background-color: rgb(17 24 39);
     }
     
     .content {
@@ -44,5 +52,21 @@
             }
         }
 
+    }
+
+    .dark {
+        @extend .content;
+        .topic {
+            .description {
+                span:first-of-type{
+                    background-color:  rgb(55 65 81);
+                    color: rgb(190 194 200);
+                }
+
+                span:nth-of-type(2) {
+                    color: rgb(190 194 200);
+                }
+            }
+        }
     }
 }

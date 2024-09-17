@@ -12,9 +12,26 @@
         font-size: 35px;
         color: black;
         font-weight: bold;
+        position: relative;
+
+        span {
+            font-weight: 200;
+            position: absolute;
+            font-size: 15px;
+            top: -30px;
+            right: -10px;
+            border-radius: 10px;
+            background-color: #d7d5d5;
+            padding: 5px;
+        }
 
         .icon {
             color: gray;
+        }
+
+        .icon2 {
+            color: gray;
+            cursor: pointer;
         }
     }
 
@@ -35,4 +52,30 @@
         }
     }
     
+}
+
+.dark { 
+    @extend .container;
+    color: white;
+
+    .info {
+        color: white;
+
+        .icon {
+            color: white;
+        }
+        
+        .icon2 {
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .containerLink {
+        .link {
+            &:hover {
+                background-color: #4d4c4c;
+            }
+        }
+    }
 }

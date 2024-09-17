@@ -1,6 +1,4 @@
-import {useEffect} from 'react'
-
-import MainContainer from "../../container/main";
+import MainContainer from "../../container/layout/main";
 import styles from './skill.module.scss'
 import JS from "../../../src/assets/images/js.svg";
 import BootStrap from "../../../src/assets/images/bootstrap.svg";
@@ -12,8 +10,13 @@ import Sass from "../../../src/assets/images/sass.svg";
 import Figma from "../../../src/assets/images/figma.svg";
 import Gitlab from "../../../src/assets/images/gitlab.svg";
 import Tailwind from "../../../src/assets/images/tailwind.svg";
+import NextDark from "../../../src/assets/images/next-dark.svg";
+
+import clsx from "clsx";
+import { useMode } from "../../context/useMode";
 
 const SkillPage = () => {
+    const {theme} = useMode();
 
     const skills = [
         {
@@ -33,8 +36,8 @@ const SkillPage = () => {
         },
         {
             name: 'Nextjs',
-            icon: Nextjs,
-            link: 'https://nextjs.org/'
+            icon:  theme === 'dark' ? NextDark : Nextjs,
+            link: 'https://nextjs.org/',
         },
         {
             name: 'Nodejs',
@@ -74,7 +77,7 @@ const SkillPage = () => {
             topic='Skills'
             title='The skills, tools and technologies I am really good at:'
         >
-            <div className={styles.container}>
+            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
                 {skills.map((item, index) => (
                     <div className={styles.skills}>
                         <a 
@@ -82,7 +85,7 @@ const SkillPage = () => {
                             target="_blank" 
                             rel="noreferrer"
                         >
-                            <img src={item.icon} alt="icon" className={styles.img}/>
+                            <img src={item.icon} alt="icon" className={clsx(styles.img, theme === 'dark' && item.style)}/>
                         </a>
                         <span>{item.name}</span>
                     </div>

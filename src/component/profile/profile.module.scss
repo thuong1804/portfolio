@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     gap: 48px;
-
+    
     .cardInfo {
         max-width: 800px;
         display: flex;
@@ -74,6 +74,7 @@
         .contactLink {
             display: flex;
             gap: 10px;
+            
             a {
                 .itemIcon {
                     color: gray;
@@ -113,4 +114,40 @@
             background-color: #e5e7eb;
         }
     }
+}
+
+.dark {
+    @extend .container;
+    color: white;
+
+    .cardInfo {
+        .headInfo {
+            h1 {
+                color: white;
+            }
+        }
+        .contactLink {
+            a {
+                .itemIcon {
+                    color: white;
+
+                    &:hover {
+                        background-color: rgb(67, 68, 70);
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .avatar {
+        .containerImg {
+            background-color: #000;
+        }
+
+        .photoShawdow {
+            background-color: #374151;
+        }
+    }
+
 }

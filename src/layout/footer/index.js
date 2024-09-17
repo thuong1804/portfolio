@@ -2,10 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCopyright } from "@fortawesome/free-regular-svg-icons"
 
 import styles from './index.module.scss'
+import { useMode } from "../../context/useMode"
+import clsx from "clsx"
 
 const FooterLayout = () => {
+    const {theme} = useMode();
+
     return (
-        <div className={styles.container}>
+        <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
             <div className={styles.left}>
                 <FontAwesomeIcon icon={faCopyright} /> 2024
             </div>

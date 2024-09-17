@@ -1,11 +1,13 @@
 
-import MainContainer from "../../container/main";
+import MainContainer from "../../container/layout/main";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import styles from './work.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
+import { useMode } from "../../context/useMode";
 
 const WorkPage = ({ workRef }) => {
+    const {theme} = useMode();
 
     const contentWork = [
         {
@@ -38,7 +40,7 @@ const WorkPage = ({ workRef }) => {
             id='Work'
             refTopic={workRef}
         >
-            <div className={styles.container}>
+            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
                 {contentWork.map((item, index) => {
                     return (
                         <div className={clsx(styles.card, {

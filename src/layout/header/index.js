@@ -1,8 +1,8 @@
+import { useMode } from '../../context/useMode';
 import Navbar from '../navbar';
 import styles from './index.module.scss'
 
 const HeaderLayout = ({onClick}) => {
-
     return (
         <div className={styles.container}>
             <div className={styles.navbarHeader}>

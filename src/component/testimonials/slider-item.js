@@ -4,8 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import styles from './slider-item.module.scss'
+import { useMode } from "../../context/useMode";
+import clsx from "clsx";
 
 export default function SimpleSlider() {
+    const {theme} = useMode();
+    
     var settings = {
         dots: false,
         infinite: true,
@@ -13,7 +17,8 @@ export default function SimpleSlider() {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: '10px'
+        centerPadding: '10px',
+        arrows: false,
     };
 
     const itemCard = [
@@ -47,14 +52,13 @@ export default function SimpleSlider() {
         <Slider {...settings} className={styles.slick}>
             {itemCard.map((item, index) => {
                 return (
-                    <div className={styles.container}>
+                    <div className={clsx(styles.container, theme === 'dark' && styles.dark )}>
                         <div className={styles.card}>
                             <img src={item.img} alt="img" className={styles.img}/>
                             <p>&#34;{item.title}&#34;</p>
                             <div className={styles.owner}>{item.owner}</div>
                             <div>{item.position}</div>
                         </div>
-                        
                     </div>
                 )
             })}

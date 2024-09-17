@@ -1,5 +1,5 @@
 import React from 'react'
-import MainContainer from '../../container/main'
+import MainContainer from '../../container/layout/main'
 
 import styles from './testimonials.module.scss'
 import SimpleSlider from './slider-item';

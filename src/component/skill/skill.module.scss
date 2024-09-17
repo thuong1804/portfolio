@@ -31,3 +31,8 @@
 
     }
 }
+
+.dark {
+    @extend .container; 
+    color: white;
+}

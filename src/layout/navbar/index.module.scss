@@ -40,7 +40,6 @@
     }
 
     .btnDownload {
-        background-color: rgb(17 24 39);
         border: none;
         width: 135px;
         padding: 8px;
@@ -50,6 +49,7 @@
         font-weight: bold;
         transition: 0.2s ease-in;
         cursor: pointer;
+        background-color: rgb(17 24 39);
 
         &:hover {
             background-color: rgb(65, 78, 105);
@@ -57,3 +57,32 @@
    }
 }
 
+.dark {
+    @extend .container;
+
+    .tag {
+        .itemTag {
+            &:hover {
+                color: rgb(219, 227, 241);
+            }
+        }
+    }
+
+    .mode {
+        .icon {
+            &:hover {
+                background-color: rgb(45, 48, 53);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .btnDownload {
+        background-color: rgb(200, 203, 206);
+        color: #000;
+
+        &:hover {
+            background-color: rgb(226, 227, 228);
+        }
+   }
+}

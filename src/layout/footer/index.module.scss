@@ -16,3 +16,9 @@
         color: rgb(144 150 159);
     }
 }
+
+.dark {
+    @extend .container;
+    color: rgb(170 175 183);
+    background-color: rgb(17 24 39);
+}

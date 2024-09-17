@@ -1,14 +1,18 @@
-import MainContainer from '../../container/main';
+import clsx from 'clsx';
+import MainContainer from '../../container/layout/main';
+import { useMode } from '../../context/useMode';
 import styles from './about.module.scss'
 
 const AboutPage = ({ aboutRef }) => {
+    const {theme} = useMode();
+
     return (
         <MainContainer
             topic='About me'
             refTopic={aboutRef}
             id='About'
         >
-            <div className={styles.container}>
+            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
                 <div className={styles.card}>
                     <div className={styles.containerImg}>
                         <div className={styles.img}>

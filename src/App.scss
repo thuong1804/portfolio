@@ -1,14 +1,30 @@
 .App {
-    header {
+    %header-styles {
         position: sticky;
         z-index: 9999;
         top: 0;
         background-color: #ffffff;
-        
+
         &.sticky {
             border-bottom: 1px solid #ccc;
             backdrop-filter: blur(24px);
             background-color: rgba(255, 255, 255, 0.5); 
+        }
+    }
+
+    .light {
+        @extend %header-styles;
+    }
+
+    .dark {
+        @extend %header-styles;
+        background-color: rgb(3, 7, 18);
+        color: white; 
+
+        &.sticky {
+            border-bottom: 1px solid #ccc;
+            backdrop-filter: blur(24px);
+            background-color: rgb(7, 11, 21, 0.5); 
         }
     }
 }

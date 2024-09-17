@@ -2,9 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './profile.module.scss'
 import { faHandPeace, faLocationDot, faDotCircle } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTelegram, faSkype, faGithub } from '@fortawesome/free-brands-svg-icons';
-import MainContainer from '../../container/main';
+import MainContainer from '../../container/layout/main';
+import { useMode } from '../../context/useMode';
+import clsx from 'clsx';
 
 const ProfilePage = () => {
+    const {theme} = useMode()
+
     const linkIcon = [
         {
             key: 'facebook',
@@ -34,7 +38,7 @@ const ProfilePage = () => {
         <MainContainer
             light
         >
-            <div className={styles.container}>
+            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
                 <div className={styles.cardInfo}>
                     <div className={styles.headInfo}>
                         <h1>

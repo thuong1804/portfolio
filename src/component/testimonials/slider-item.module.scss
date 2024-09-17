@@ -2,6 +2,7 @@
 [class~="slick-list"] {
     min-height: 500px;
 }
+
 .container {
     max-width: 360px;
     margin-top: 30px;
@@ -27,5 +28,14 @@
             font-size: 24px;
             font-weight: bold;
         }
+    }
+}
+
+.dark {
+    @extend .container;
+    color: rgb(188 192 199);
+    .card {
+        background-color: rgb(31 41 55);
+        box-shadow: 0px 4px 10px 0px rgba(57, 57, 57, 0.7);
     }
 }

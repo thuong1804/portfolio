@@ -1,7 +1,11 @@
-import MainContainer from "../../container/main"
+import clsx from "clsx";
+import MainContainer from "../../container/layout/main"
+import { useMode } from "../../context/useMode"
 import styles from './experience.module.scss'
 
 const ExperiencePage = () => {
+    const {theme} = useMode();
+
     const contentCardExperience = [
         {
             logo: 'Upwork logo',
@@ -29,7 +33,7 @@ const ExperiencePage = () => {
             topic='Experience'
             title='Here is a quick summary of my most recent experiences:'
         >
-            <div className={styles.container}>
+            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
                 {contentCardExperience.map((item, index) => {
                     return (
                         <div className={styles.card}>

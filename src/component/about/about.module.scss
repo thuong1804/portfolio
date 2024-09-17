@@ -3,20 +3,6 @@
     flex-direction: column;
     gap: 48px;
 
-    .title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        span {
-            padding: 5px 19px;
-            font-weight: 500;
-            font-size: 14px;
-            background-color: #e5e7eb;
-            border-radius: 15px;
-        }
-    }
-
     .card {
         display: flex;
         gap: 12px;
@@ -67,6 +53,28 @@
             .titleDescription {
                 display: flex;
                 gap: 30px;
+            }
+        }
+    }
+}
+
+.dark {
+    @extend .container;
+    color: white;
+
+    .card {
+        .containerImg {
+            .img {
+                background-color: #111827;
+            }
+            .photoShawdow {
+                background-color: #374151;
+            }
+        }
+
+        .description {
+            h1 {
+                color: #fff;
             }
         }
     }
