@@ -4,7 +4,7 @@ import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import styles from './index.module.scss'
 
 
-const Navbar = () => {
+const Navbar = ({onClick}) => {
     const itemTag = ['About', 'Work', 'Testimonials', 'Contact']
     const [changeMode, setChangeMode] = useState(true)
 
@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className={styles.container}>
             <ul className={styles.tag}>
                 {itemTag.map((item, index) => (
-                    <li className={styles.itemTag}>{item}</li>
+                    <li className={styles.itemTag} onClick={(e) => onClick(e, item)}>{item}</li>
                 ))}
             </ul>
             <div className={styles.mode} onClick={() => setChangeMode(pre => !pre)}>

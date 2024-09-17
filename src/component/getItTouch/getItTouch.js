@@ -5,7 +5,7 @@ import { faGithub, faFacebook, faSkype } from '@fortawesome/free-brands-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './getItTouch.module.scss'
 
-const GetItTouch = () => {
+const GetItTouch = ({ contactRef }) => {
     const item = [
         {
             key: 'github',
@@ -28,28 +28,30 @@ const GetItTouch = () => {
         <MainContainer
             light
             topic='Get in touch'
+            id='Contact'
+            refTopic={contactRef}
             title='What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.'
         >
             <div className={styles.container}>
                 <div className={styles.info}>
-                    <FontAwesomeIcon 
-                        icon={faEnvelope} 
+                    <FontAwesomeIcon
+                        icon={faEnvelope}
                         className={styles.icon}
-                    /> 
-                    thuong123tvt@gmail.com 
-                    <FontAwesomeIcon 
-                        icon={faCopy} 
+                    />
+                    thuong123tvt@gmail.com
+                    <FontAwesomeIcon
+                        icon={faCopy}
                         className={styles.icon}
                     />
                 </div>
                 <div className={styles.info}>
-                     <FontAwesomeIcon 
-                        icon={faPhone} 
+                    <FontAwesomeIcon
+                        icon={faPhone}
                         className={styles.icon}
-                    /> 
-                    +91 8980500565 
-                    <FontAwesomeIcon 
-                        icon={faCopy} 
+                    />
+                    +91 8980500565
+                    <FontAwesomeIcon
+                        icon={faCopy}
                         className={styles.icon}
                     />
                 </div>
@@ -57,8 +59,8 @@ const GetItTouch = () => {
                 <div className={styles.containerLink}>
                     {item.map(item => {
                         return (
-                            <a 
-                                href={item.link} 
+                            <a
+                                href={item.link}
                                 className={styles.link}
                                 target='_blank'
                                 rel="noreferrer"
@@ -67,7 +69,7 @@ const GetItTouch = () => {
                             </a>
                         )
                     })}
-                  
+
                 </div>
             </div>
         </MainContainer>

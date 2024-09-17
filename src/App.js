@@ -8,7 +8,8 @@ import FooterLayout from './layout/footer';
 
 function App() {
     const [sticky, setSticky] = useState(false)
-
+    const [sections, setSection] = useState();
+    
     const handelScroll = () => {
         if (window.scrollY > 0) {
             setSticky(true)
@@ -24,13 +25,29 @@ function App() {
         }
     }, [])
 
+    const onClickScrollItem = (e, itemTag) => {
+        const findComponent = sections.refProps.find(section => section.current.id === itemTag)
+        e.preventDefault();
+        if (findComponent) {
+            findComponent.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        }
+    }
+    const refComponent = (...refProps) => {
+        setSection({refProps})
+    }
+
+    console.log({sections})
+
     return (
         <div className="App">
             <header className={clsx({sticky: sticky})}>
-                <HeaderLayout/>
+                <HeaderLayout onClick={onClickScrollItem}/>
             </header>
             <main>
-                <MainLayout />
+                <MainLayout refComponent={refComponent}/>
             </main>
             <footer>
                 <FooterLayout />

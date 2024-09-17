@@ -1,3 +1,5 @@
+import {useEffect} from 'react'
+
 import MainContainer from "../../container/main";
 import styles from './skill.module.scss'
 import JS from "../../../src/assets/images/js.svg";

@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React, { useRef, useEffect } from 'react'
 import ProfilePage from '../../component/profile/profile';
 import AboutPage from '../../component/about/about';
 import SkillPage from '../../component/skill/skill';
@@ -7,16 +8,27 @@ import WorkPage from '../../component/work/work';
 import Testimonials from '../../component/testimonials/testimonials';
 import GetItTouch from '../../component/getItTouch/getItTouch';
 
-const MainLayout = () => {
+const MainLayout = ({ refComponent }) => {
+    const aboutRef = useRef()
+    const workRef = useRef()
+    const testimonialsRef = useRef()
+    const contactRef = useRef()
+
+    useEffect(() => {
+        if (aboutRef || workRef || testimonialsRef || contactRef) {
+            refComponent?.(aboutRef, workRef, testimonialsRef, contactRef)
+        }
+    }, [workRef, aboutRef, testimonialsRef, contactRef])
+
     return (
         <React.Fragment>
             <ProfilePage />
-            <AboutPage />
+            <AboutPage aboutRef={aboutRef} />
             <SkillPage />
             <ExperiencePage />
-            <WorkPage />
-            <Testimonials/>
-            <GetItTouch/>
+            <WorkPage workRef={workRef} />
+            <Testimonials testimonialsRef={testimonialsRef} />
+            <GetItTouch contactRef={contactRef} />
         </React.Fragment>
     )
 }

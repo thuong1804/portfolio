@@ -6,10 +6,13 @@ const MainContainer = ({
     light,
     topic,
     title,
+    refTopic,
+    id,
 }) => {
+    
     return (
         <div className={clsx(styles.container, light ? styles.light : styles.gray)}>
-            <div className={styles.content}>
+            <div className={styles.content} id={id} ref={refTopic}>
                 {(topic || title) && (
                     <div className={styles.topic}>
                         <div className={styles.description}>

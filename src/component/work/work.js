@@ -1,10 +1,12 @@
+
 import MainContainer from "../../container/main";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import styles from './work.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 
-const WorkPage = () => {
+const WorkPage = ({ workRef }) => {
+
     const contentWork = [
         {
             title: 'Title',
@@ -33,6 +35,8 @@ const WorkPage = () => {
             light
             topic='Work'
             title='Some of the noteworthy projects I have built:'
+            id='Work'
+            refTopic={workRef}
         >
             <div className={styles.container}>
                 {contentWork.map((item, index) => {

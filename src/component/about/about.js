@@ -1,10 +1,12 @@
 import MainContainer from '../../container/main';
 import styles from './about.module.scss'
 
-const AboutPage = () => {
+const AboutPage = ({ aboutRef }) => {
     return (
-        <MainContainer 
+        <MainContainer
             topic='About me'
+            refTopic={aboutRef}
+            id='About'
         >
             <div className={styles.container}>
                 <div className={styles.card}>
