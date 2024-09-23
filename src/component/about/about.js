@@ -1,10 +1,13 @@
 import clsx from 'clsx';
 import MainContainer from '../../container/layout/main';
-import { useMode } from '../../context/useMode';
 import styles from './about.module.scss'
+import { mode } from '../../contants/index,';
+import { useMode } from '../../hook/useMode';
+import useDevice from '../../hook/useDevice';
 
 const AboutPage = ({ aboutRef }) => {
     const {theme} = useMode();
+    const { isMobile} = useDevice();
 
     return (
         <MainContainer
@@ -12,13 +15,17 @@ const AboutPage = ({ aboutRef }) => {
             refTopic={aboutRef}
             id='About'
         >
-            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
+            <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobiContainer)}>
                 <div className={styles.card}>
                     <div className={styles.containerImg}>
-                        <div className={styles.img}>
-                            <img src='/hihhi.png' height={480} width={400} alt='avatar' />
+                        <div className={styles.imgItem}>
+                            {isMobile ? (
+                                <img src='/hihhi.png' height={280} width={240} alt='avatar' />
+                            ) : (
+                                <img src='/hihhi.png' height={480} width={400} alt='avatar' />
+                            )}
+                            <div className={styles.photoShawdow}></div>
                         </div>
-                        <div className={styles.photoShawdow}></div>
                     </div>
                     <div className={styles.description}>
                         <h1>Curious about me? Here you have it:</h1>

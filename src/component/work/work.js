@@ -4,10 +4,13 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import styles from './work.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
-import { useMode } from "../../context/useMode";
+import { mode } from "../../contants/index,";
+import { useMode } from "../../hook/useMode";
+import useDevice from "../../hook/useDevice";
 
 const WorkPage = ({ workRef }) => {
     const {theme} = useMode();
+    const {isMobile} = useDevice();
 
     const contentWork = [
         {
@@ -40,14 +43,18 @@ const WorkPage = ({ workRef }) => {
             id='Work'
             refTopic={workRef}
         >
-            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
+            <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobiContainer)}>
                 {contentWork.map((item, index) => {
                     return (
                         <div className={clsx(styles.card, {
                             [styles.reverseCard]: index === 1
                         })}>
                             <div className={styles.left}>
-                                <img src={item.img} width={470} height={280} alt='avatar' className={styles.img} />
+                                {isMobile ? (
+                                    <img src={item.img} width={300} height={250} alt='avatar' className={styles.img} />
+                                ) : (
+                                    <img src={item.img} width={470} height={280} alt='avatar' className={styles.img} />
+                                )}
                             </div>
                             <div className={styles.right}>
                                 <h4>{item.title}</h4>

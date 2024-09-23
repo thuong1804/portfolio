@@ -9,23 +9,26 @@ import Testimonials from '../../component/testimonials/testimonials';
 import GetItTouch from '../../component/getItTouch/getItTouch';
 
 const MainLayout = ({ refComponent }) => {
+    const profileRef = useRef()
     const aboutRef = useRef()
     const workRef = useRef()
+    const skillRef = useRef()
     const testimonialsRef = useRef()
     const contactRef = useRef()
+    const experienceRef = useRef()
 
     useEffect(() => {
-        if (aboutRef || workRef || testimonialsRef || contactRef) {
+        if (profileRef || aboutRef || workRef || testimonialsRef || contactRef || skillRef) {
             refComponent?.(aboutRef, workRef, testimonialsRef, contactRef)
         }
-    }, [workRef, aboutRef, testimonialsRef, contactRef])
+    }, [workRef, aboutRef, testimonialsRef, contactRef, skillRef, profileRef])
 
     return (
         <React.Fragment>
-            <ProfilePage />
+            <ProfilePage profileRef={profileRef} />
             <AboutPage aboutRef={aboutRef} />
-            <SkillPage />
-            <ExperiencePage />
+            <SkillPage skillRef={skillRef}/>
+            <ExperiencePage experienceRef={experienceRef}/>
             <WorkPage workRef={workRef} />
             <Testimonials testimonialsRef={testimonialsRef} />
             <GetItTouch contactRef={contactRef} />

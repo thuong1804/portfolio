@@ -1,13 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './profile.module.scss'
 import { faHandPeace, faLocationDot, faDotCircle } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTelegram, faSkype, faGithub } from '@fortawesome/free-brands-svg-icons';
 import MainContainer from '../../container/layout/main';
-import { useMode } from '../../context/useMode';
 import clsx from 'clsx';
+import { mode } from '../../contants/index,';
+import styles from './profile.module.scss'
+import { useMode } from '../../hook/useMode';
+import useDevice from '../../hook/useDevice';
 
-const ProfilePage = () => {
+const ProfilePage = ({profileRef}) => {
     const {theme} = useMode()
+    const {isMobile} = useDevice();
 
     const linkIcon = [
         {
@@ -37,12 +40,14 @@ const ProfilePage = () => {
     return (
         <MainContainer
             light
+            id='Profile'
+            refTopic={profileRef}
         >
-            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
+            <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobiContainer)}>
                 <div className={styles.cardInfo}>
                     <div className={styles.headInfo}>
                         <h1>
-                            Hi, I'm Sagar <FontAwesomeIcon icon={faHandPeace} className={styles.icon} />
+                            Hi, I'm Thuong Le <FontAwesomeIcon icon={faHandPeace} className={styles.icon} />
                         </h1>
                         <p>
                             I'm a full stack developer (React.js & Node.js) with a focus on creating
@@ -73,9 +78,13 @@ const ProfilePage = () => {
                 </div>
                 <div className={styles.avatar}>
                     <div className={styles.containerImg}>
-                        <img src='/hihhi.png' height={320} width={280} alt='avatar' />
+                        {isMobile ? (
+                            <img src='/hihhi.png' height={250} width={200} alt='avatar' />
+                        ) : (
+                            <img src='/hihhi.png' height={320} width={280} alt='avatar' />
+                        )}
+                        <div className={styles.photoShawdow}></div>
                     </div>
-                    <div className={styles.photoShawdow}></div>
 
                 </div>
             </div>

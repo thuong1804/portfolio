@@ -79,3 +79,11 @@
         }
     }
 }
+
+.mobiContainer {
+    @extend .container;
+    .info {
+        font-size: 20px;
+        gap: 10px;
+    }
+}

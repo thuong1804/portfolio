@@ -5,13 +5,20 @@ import clsx from 'clsx';
 import MainLayout from './layout/main';
 import HeaderLayout from './layout/header';
 import FooterLayout from './layout/footer';
-import { useMode } from './context/useMode';
+import { mode } from './contants/index,';
+import { useMode } from './hook/useMode';
+import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons';
+import useDevice from './hook/useDevice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import HeaderMobile from './layout/header/header-device-mobile';
 
 function App() {
     const [sticky, setSticky] = useState(false)
     const [sections, setSection] = useState();
     const {theme} = useMode()
-
+    const { isMobile } = useDevice();
+    const [isOpen, setIsOpen] = useState(false);
+    
     const handelScroll = () => {
         if (window.scrollY > 0) {
             setSticky(true)
@@ -19,7 +26,7 @@ function App() {
             setSticky(false)
         }
     }
-
+    
     useEffect(() => {
         window.addEventListener('scroll', handelScroll)
         return () => {
@@ -40,18 +47,28 @@ function App() {
     const refComponent = (...refProps) => {
         setSection({refProps})
     }
-
+ 
     return (
-        <div className="App">
+        <div className={clsx("App", theme === mode.LIGHT ? 'appLight' : 'appDark')}>
+            <div>
             <header className={clsx(theme, {sticky: sticky})}>
-                <HeaderLayout onClick={onClickScrollItem}/>
+                <HeaderLayout onClick={onClickScrollItem} setIsOpen={setIsOpen}/>
             </header>
+            {isMobile && (
+                <HeaderMobile 
+                    setIsOpen={setIsOpen} 
+                    isOpen={isOpen}
+                    onClick={onClickScrollItem}
+                />
+            )}
             <main>
                 <MainLayout refComponent={refComponent}/>
             </main>
             <footer>
                 <FooterLayout />
             </footer>
+            </div>
+           
         </div>
     );
 }

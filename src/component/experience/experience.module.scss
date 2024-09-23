@@ -4,45 +4,93 @@
     flex-direction: column;
     gap: 48px;
 
-    .card {
-        max-width: 800px;
-        width: 100%;
+    .boxCard {
         display: flex;
-        align-items: flex-start;
-        background-color: white;
-        border-radius: 10px;
-        padding: 32px;
-        justify-content: space-between;
-        box-shadow: 0px 4px 10px 0px rgb(223 208 208 / 70%);
+        max-width: 800px;
+        flex-direction: column;
+        gap: 40px;
 
-        .left {
-            font-size: 20px;
-
-        }
-
-        .center {
-            max-width: 50%;
+        .card {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            h4 {
+            align-items: flex-start;
+            background-color: white;
+            border-radius: 10px;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+            box-shadow: 0px 4px 10px 0px rgb(223 208 208 / 70%);
+    
+            .left {
                 font-size: 20px;
-                margin: 0;
+    
             }
-            span {
-                font: 16px;
-                line-height: 24px;
+    
+            .center {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                h4 {
+                    font-size: 20px;
+                    margin: 0;
+                }
+                span {
+                    font: 16px;
+                    line-height: 24px;
+                }
             }
         }
     }
+
+   
 }
 
 .dark {
     @extend .container;
     color: white;
-    
-    .card {
-        background-color: #1f2937;
-        box-shadow: 0px 4px 10px 0px rgba(19, 18, 18, 0.7);
+    .boxCard {
+        .card {
+            background-color: #1f2937;
+            box-shadow: 0px 4px 10px 0px rgba(19, 18, 18, 0.7);
+        }
+    }
+ 
+}
+
+.mobiContainer {
+    @extend .container;
+
+    .boxCard {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            width: 300px;
+            flex-direction: column;
+            padding: 20px 10px;
+            gap: 15px;
+
+            .left {
+                font-size: 16px;
+            }
+
+            .center {
+                width: 100%;
+
+                h4 {
+                    font-size: 16px;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+            
+            .right {
+                font-size: 14px;
+            }
+        }
     }
 }

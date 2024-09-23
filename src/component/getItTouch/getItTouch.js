@@ -4,13 +4,16 @@ import { faEnvelope, faCopy, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faFacebook, faSkype } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './getItTouch.module.scss'
-import { useMode } from '../../context/useMode'
 import clsx from 'clsx'
+import { mode } from '../../contants/index,'
+import { useMode } from '../../hook/useMode'
+import useDevice from '../../hook/useDevice'
 
 const GetItTouch = ({ contactRef }) => {
     const { theme } = useMode();
     const [isCopyInfo, setIsCopyInfo] = useState(false);
     const [isCopyNumber, setIsCopyInfoNumber] = useState(false);
+    const {isMobile} = useDevice();
 
     const item = [
         {
@@ -71,7 +74,7 @@ const GetItTouch = ({ contactRef }) => {
             refTopic={contactRef}
             title='What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.'
         >
-            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
+            <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobiContainer)}>
                 <div className={styles.info} id='info'>
                     {isCopyInfo && (<span>Copied</span>)}
                     <FontAwesomeIcon

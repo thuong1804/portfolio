@@ -41,14 +41,18 @@
 
     .btnDownload {
         border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 135px;
-        padding: 8px;
+        padding: 8px 2px;
         border-radius: 10px;
         color: white;
         font-size: 1rem;
         font-weight: bold;
         transition: 0.2s ease-in;
         cursor: pointer;
+        text-decoration: none;
         background-color: rgb(17 24 39);
 
         &:hover {
@@ -78,11 +82,43 @@
     }
 
     .btnDownload {
-        background-color: rgb(200, 203, 206);
+        background-color: rgb(235, 238, 241);
         color: #000;
 
         &:hover {
             background-color: rgb(226, 227, 228);
         }
    }
+}
+
+
+.mobile {
+    @extend .container;
+    flex-direction: column;
+    
+    .tag {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        font-weight: 400;
+        gap: 15px;
+        padding: 0 0 15px 0;
+
+        li {
+            padding-left: 15px;
+        }
+    }
+
+    .mode {
+        width: 100%;
+        gap: 120px;
+        border: none;
+        color: rgb(126, 136, 147);
+
+    }
+
+    .btnDownload {
+        width: 90%;
+    }
+
 }

@@ -22,3 +22,8 @@
     color: rgb(170 175 183);
     background-color: rgb(17 24 39);
 }
+
+.mobile {
+    @extend .container;
+    font-size: 11px;
+}

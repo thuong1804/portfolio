@@ -2,14 +2,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCopyright } from "@fortawesome/free-regular-svg-icons"
 
 import styles from './index.module.scss'
-import { useMode } from "../../context/useMode"
 import clsx from "clsx"
+import { mode } from "../../contants/index,"
+import { useMode } from "../../hook/useMode"
+import useDevice from "../../hook/useDevice"
 
 const FooterLayout = () => {
     const {theme} = useMode();
+    const {isMobile} = useDevice();
 
     return (
-        <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
+        <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobile)}>
             <div className={styles.left}>
                 <FontAwesomeIcon icon={faCopyright} /> 2024
             </div>

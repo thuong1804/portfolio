@@ -13,10 +13,13 @@ import Tailwind from "../../../src/assets/images/tailwind.svg";
 import NextDark from "../../../src/assets/images/next-dark.svg";
 
 import clsx from "clsx";
-import { useMode } from "../../context/useMode";
+import { mode } from "../../contants/index,";
+import { useMode } from "../../hook/useMode";
+import useDevice from "../../hook/useDevice";
 
-const SkillPage = () => {
+const SkillPage = ({skillRef}) => {
     const {theme} = useMode();
+    const {isMobile} = useDevice();
 
     const skills = [
         {
@@ -36,7 +39,7 @@ const SkillPage = () => {
         },
         {
             name: 'Nextjs',
-            icon:  theme === 'dark' ? NextDark : Nextjs,
+            icon:  theme === mode.DARK ? NextDark : Nextjs,
             link: 'https://nextjs.org/',
         },
         {
@@ -76,8 +79,10 @@ const SkillPage = () => {
             light
             topic='Skills'
             title='The skills, tools and technologies I am really good at:'
+            d='Skill'
+            refTopic={skillRef}
         >
-            <div className={clsx(styles.container, theme === 'dark' && styles.dark)}>
+            <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobiContainer)}>
                 {skills.map((item, index) => (
                     <div className={styles.skills}>
                         <a 
@@ -85,7 +90,7 @@ const SkillPage = () => {
                             target="_blank" 
                             rel="noreferrer"
                         >
-                            <img src={item.icon} alt="icon" className={clsx(styles.img, theme === 'dark' && item.style)}/>
+                            <img src={item.icon} alt="icon" className={clsx(styles.img, theme === mode.DARK && item.style)}/>
                         </a>
                         <span>{item.name}</span>
                     </div>
