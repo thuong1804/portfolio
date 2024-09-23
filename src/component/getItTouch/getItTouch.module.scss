@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+
+    .info {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        position: relative;
+
+        span {
+            font-weight: 200;
+            position: absolute;
+            font-size: 15px;
+            top: -30px;
+            right: -10px;
+            border-radius: 10px;
+            background-color: #d7d5d5;
+            padding: 5px;
+        }
+
+        .icon {
+            color: gray;
+        }
+
+        .icon2 {
+            color: gray;
+            cursor: pointer;
+        }
+    }
+
+    .containerLink {
+        display: flex;
+        gap: 10px;
+
+        .link {
+            color: gray;
+            font-size: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: 0.2s ease-in;
+
+            &:hover {
+                background-color: #f6f0f0;
+            }
+        }
+    }
+    
+}
+
+.dark { 
+    @extend .container;
+    color: white;
+
+    .info {
+        color: white;
+
+        .icon {
+            color: white;
+        }
+        
+        .icon2 {
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .containerLink {
+        .link {
+            &:hover {
+                background-color: #4d4c4c;
+            }
+        }
+    }
+}
+
+.mobiContainer {
+    @extend .container;
+    .info {
+        font-size: 20px;
+        gap: 10px;
+    }
+}

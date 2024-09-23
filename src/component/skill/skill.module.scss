@@ -1,0 +1,44 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
+    justify-content: center;
+    align-items: center;
+
+    .skills {
+        width: 70px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        justify-content: center;
+        gap: 6px;
+
+        .img {
+            width: 50px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        span {
+            font-weight: 500;
+        }
+
+    }
+}
+
+.dark {
+    @extend .container; 
+    color: white;
+}
+
+.mobiContainer {
+    @extend .container;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+}

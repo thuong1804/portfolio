@@ -1,0 +1,45 @@
+.App {
+    
+    %header-styles {
+        position: sticky;
+        z-index: 999;
+        top: 0;
+
+        &.sticky {
+            border-bottom: 1px solid #ccc;
+            backdrop-filter: blur(24px);
+            background-color: rgba(255, 255, 255, 0.5); 
+        }
+    }
+
+    .LIGHT {
+        @extend %header-styles;
+        background-color: rgb(255, 255, 255, 1);
+
+    }
+
+    .DARK {
+        @extend %header-styles;
+        background-color: rgb(3, 7, 18);
+        color: white; 
+
+        &.sticky {
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #434141;
+            background-color: rgba(7, 11, 21, 0.5);
+        }
+    }
+
+    &.appLight {
+        background-color: rgb(255, 255, 255, 1);
+    }
+    
+    &.appDark {
+        background-color: #000;
+    }
+
+
+}
+
+
+

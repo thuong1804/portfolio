@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .tag {
+        display: flex;
+        font-weight: 500;
+        gap: 35px;
+        list-style-type: none;
+        
+        .itemTag {
+            transition: 0.2s ease-in;
+            cursor: pointer;
+            
+            &:hover {
+                color: rgb(17 24 39);
+            }
+        }
+    }
+    
+    .mode {
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid rgb(223, 217, 217);
+
+        .icon {
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+
+            &:hover {
+                background-color: rgb(240, 241, 243);
+                border-radius: 5px;
+            }
+        }
+
+    }
+
+    .btnDownload {
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 135px;
+        padding: 8px 2px;
+        border-radius: 10px;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: 0.2s ease-in;
+        cursor: pointer;
+        text-decoration: none;
+        background-color: rgb(17 24 39);
+
+        &:hover {
+            background-color: rgb(65, 78, 105);
+        }
+   }
+}
+
+.dark {
+    @extend .container;
+
+    .tag {
+        .itemTag {
+            &:hover {
+                color: rgb(219, 227, 241);
+            }
+        }
+    }
+
+    .mode {
+        .icon {
+            &:hover {
+                background-color: rgb(45, 48, 53);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .btnDownload {
+        background-color: rgb(235, 238, 241);
+        color: #000;
+
+        &:hover {
+            background-color: rgb(226, 227, 228);
+        }
+   }
+}
+
+
+.mobile {
+    @extend .container;
+    flex-direction: column;
+    
+    .tag {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        font-weight: 400;
+        gap: 15px;
+        padding: 0 0 15px 0;
+
+        li {
+            padding-left: 15px;
+        }
+    }
+
+    .mode {
+        width: 100%;
+        gap: 120px;
+        border: none;
+        color: rgb(126, 136, 147);
+        margin-bottom: 20px;
+    }
+
+    .btnDownload {
+        width: 90%;
+    }
+
+}
