@@ -48,13 +48,14 @@ const MainContainer = ({
                 if (refTopic.current) {
                   observer.unobserve(refTopic?.current);
                 }
-              };
+            };
         }
      
       }, []);
 
     return (
-        <div className={clsx(styles.container, handelChangeModeTheme(), isVisible && styles.visible,isMobile && styles.mobiContainer )}>
+        <div className={clsx(styles.container, handelChangeModeTheme(),
+            isVisible && styles.visible, isMobile && styles.mobiContainer)}>
             <div className={clsx(styles.content, theme === mode.DARK && styles.dark)} id={id} ref={refTopic}>
                 {(topic || title) && (
                     <div className={styles.topic}>

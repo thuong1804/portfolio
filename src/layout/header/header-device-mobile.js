@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import clsx from "clsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import styles from './header-device-mobile.module.scss'
 import Navbar from '../navbar';
 import { useMode } from '../../hook/useMode';
 import { mode } from '../../contants/index,';
+import styles from './header-device-mobile.module.scss'
 
 const HeaderMobile = ({isOpen, setIsOpen, onClick}) => {
     const {theme} = useMode();
