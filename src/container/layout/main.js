@@ -55,8 +55,8 @@ const MainContainer = ({
 
     return (
         <div className={clsx(styles.container, handelChangeModeTheme(),
-            isVisible && styles.visible, isMobile && styles.mobiContainer)}>
-            <div className={clsx(styles.content, theme === mode.DARK && styles.dark)} id={id} ref={refTopic}>
+            isVisible && styles.visible, isMobile && styles.mobiContainer)} id={id} ref={refTopic}>
+            <div className={clsx(styles.content, theme === mode.DARK && styles.dark)} >
                 {(topic || title) && (
                     <div className={styles.topic}>
                         <div className={styles.description}>
