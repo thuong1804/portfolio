@@ -12,10 +12,10 @@ import HeaderMobile from './layout/header/header-device-mobile';
 function App() {
     const [sticky, setSticky] = useState(false)
     const [sections, setSection] = useState();
-    const {theme} = useMode()
+    const { theme } = useMode()
     const { isMobile } = useDevice();
     const [isOpen, setIsOpen] = useState(false);
-    
+
     const handelScroll = () => {
         if (window.scrollY > 0) {
             setSticky(true)
@@ -23,7 +23,7 @@ function App() {
             setSticky(false)
         }
     }
-    
+
     useEffect(() => {
         window.addEventListener('scroll', handelScroll)
         return () => {
@@ -42,23 +42,23 @@ function App() {
         }
     }
     const refComponent = (...refProps) => {
-        setSection({refProps})
+        setSection({ refProps })
     }
- 
+
     return (
-        <div className={clsx("App", theme === mode.LIGHT ? 'appLight' : 'appDark')}>
-            <header className={clsx(theme, {sticky: sticky})}>
-                <HeaderLayout onClick={onClickScrollItem} setIsOpen={setIsOpen}/>
+        <div className={clsx("App", theme === mode.LIGHT ? 'appLight' : 'appDark', { blurred: isMobile && isOpen })}>
+            <header className={clsx(theme, { sticky: sticky })}>
+                <HeaderLayout onClick={onClickScrollItem} setIsOpen={setIsOpen} />
             </header>
             {isMobile && (
-                <HeaderMobile 
-                    setIsOpen={setIsOpen} 
+                <HeaderMobile
+                    setIsOpen={setIsOpen}
                     isOpen={isOpen}
                     onClick={onClickScrollItem}
                 />
             )}
             <main>
-                <MainLayout refComponent={refComponent}/>
+                <MainLayout refComponent={refComponent} />
             </main>
             <footer>
                 <FooterLayout />

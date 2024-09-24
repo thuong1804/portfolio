@@ -38,7 +38,12 @@
         background-color: #000;
     }
 
-
+    &.blurred {
+       header, main, footer {
+            backdrop-filter: blur(24px);
+            opacity: 0.5;
+        }
+    }
 }
 
 
