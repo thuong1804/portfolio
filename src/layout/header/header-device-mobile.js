@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import { useEffect, useRef, useState } from 'react'
 import clsx from "clsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -7,19 +7,37 @@ import { useMode } from '../../hook/useMode';
 import { mode } from '../../contants/index,';
 import styles from './header-device-mobile.module.scss'
 
-const HeaderMobile = ({isOpen, setIsOpen, onClick}) => {
-    const {theme} = useMode();
-    
+const HeaderMobile = ({ isOpen, setIsOpen, onClick }) => {
+    const { theme } = useMode();
+    const refNavbar = useRef();
+
     useEffect(() => {
         if (isOpen) {
-            document.body.style = 'overflow-y: hidden;'
+            document.body.style.overflowY = 'hidden';
         } else {
-            document.body.style = 'overflow-y: auto;'
+            document.body.style.overflowY = 'auto';
         }
-    }, [isOpen])
-    
+    }, [isOpen]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (refNavbar.current && !refNavbar.current.contains(event.target)) {
+                setIsOpen(false)
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+
+    }, [refNavbar]);
+
     return (
-        <div className={clsx(styles.bar, isOpen && styles.open, theme === mode.LIGHT && styles.light)}>
+        <div
+            className={clsx(styles.bar, isOpen && styles.open, theme === mode.LIGHT && styles.light)}
+            ref={refNavbar}
+        >
             <div className={styles.headerBar}>
                 <div className={styles.title}>Hello</div>
                 <FontAwesomeIcon
@@ -28,7 +46,7 @@ const HeaderMobile = ({isOpen, setIsOpen, onClick}) => {
                     onClick={() => setIsOpen(false)}
                 />
             </div>
-            <Navbar onClick={onClick} setIsOpen={setIsOpen}/>
+            <Navbar onClick={onClick} setIsOpen={setIsOpen} />
         </div>
     )
 }
