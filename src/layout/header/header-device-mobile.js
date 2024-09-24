@@ -39,7 +39,7 @@ const HeaderMobile = ({ isOpen, setIsOpen, onClick }) => {
             ref={refNavbar}
         >
             <div className={styles.headerBar}>
-                <div className={styles.title}>Hello</div>
+                <div className={styles.title} onClick={(e) => {onClick(e, 'Profile'); setIsOpen(false)}}>Hello</div>
                 <FontAwesomeIcon
                     icon={faXmark}
                     className={styles.close}

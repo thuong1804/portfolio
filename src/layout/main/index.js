@@ -19,7 +19,7 @@ const MainLayout = ({ refComponent }) => {
 
     useEffect(() => {
         if (profileRef || aboutRef || workRef || testimonialsRef || contactRef || skillRef) {
-            refComponent?.(aboutRef, workRef, testimonialsRef, contactRef)
+            refComponent?.(profileRef, aboutRef, workRef, testimonialsRef, contactRef)
         }
     }, [workRef, aboutRef, testimonialsRef, contactRef, skillRef, profileRef])
 

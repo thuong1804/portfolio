@@ -12,7 +12,7 @@ const HeaderLayout = ({ onClick, setIsOpen }) => {
     return (
         <div className={clsx(styles.container, isMobile && styles.mobiHeader)}>
             <div className={styles.navbarHeader}>
-                <div className={styles.title}>Hello</div>
+                <div className={styles.title} onClick={(e) => onClick(e, 'Profile')}>Hello</div>
                 {isMobile ? (
                     <FontAwesomeIcon
                         icon={faBars}

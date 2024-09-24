@@ -32,8 +32,8 @@ function App() {
     }, [])
 
     const onClickScrollItem = (e, itemTag) => {
-        const findComponent = sections.refProps.find(section => section.current.id === itemTag)
         e.preventDefault();
+        const findComponent = sections.refProps.find(section => section.current.id === itemTag)
         if (findComponent) {
             findComponent.current.scrollIntoView({
                 behavior: 'smooth',
