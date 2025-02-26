@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import clsx from 'clsx';
-import cv from '../../assets/images/cv.pdf'
+import cv from '../../assets/images/CV-LHT-2025.pdf'
 import { mode } from '../../contants/index,';
 import { useMode } from '../../hook/useMode';
 import useDevice from '../../hook/useDevice';

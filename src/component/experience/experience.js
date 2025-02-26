@@ -4,6 +4,9 @@ import styles from './experience.module.scss'
 import { contentCardExperience, mode } from "../../contants/index,";
 import { useMode } from "../../hook/useMode";
 import useDevice from "../../hook/useDevice";
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const ExperiencePage = ({ experienceRef }) => {
     const { theme } = useMode();
@@ -23,14 +26,19 @@ const ExperiencePage = ({ experienceRef }) => {
                         return (
                             <div className={styles.card}>
                                 <div className={styles.left}>
-                                    <img src={item.logo} alt="logo" style={{objectFit:'cover'}}></img>
+                                    <a href={item.link} target="_blank">
+                                        <img src={item.logo} alt="logo" style={{objectFit:'cover'}}></img>
+                                    </a>
                                 </div>
                                 <div className={styles.center}>
                                     <h4>
                                         {item.title}
                                     </h4>
-                                    <span>
-                                        &#8901; {item.content}
+                                    <span style={{display:'flex', gap:'10px', alignItems:'center'}}>
+                                        &#8901; {item.content} 
+                                        <a href={item.link} target="_blank">
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.iconLocation} />
+                                        </a> 
                                     </span>
                                     <span>
                                         {item.descriptions && <>&#8901; {item?.descriptions}</>}   

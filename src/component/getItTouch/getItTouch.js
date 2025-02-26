@@ -24,12 +24,12 @@ const GetItTouch = ({ contactRef }) => {
         {
             key: 'facebook',
             icon: faFacebook,
-            link: 'https://github.com/thuong1804'
+            link: 'https://www.facebook.com/Thuongpro40/'
         },
         {
             key: 'skype',
             icon: faSkype,
-            link: 'https://github.com/thuong1804'
+            link: 'https://join.skype.com/invite/schwoInw4khL'
         },
     ]
     

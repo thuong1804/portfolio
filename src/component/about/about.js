@@ -20,9 +20,9 @@ const AboutPage = ({ aboutRef }) => {
                     <div className={styles.containerImg}>
                         <div className={styles.imgItem}>
                             {isMobile ? (
-                                <img src='/hihhi.png' height={280} width={240} alt='avatar' />
+                                <img src='/avatar-2.jpg' height={280} width={240} alt='avatar' />
                             ) : (
-                                <img src='/hihhi.png' height={480} width={400} alt='avatar' />
+                                <img src='/avatar-2.jpg' height={480} width={400} alt='avatar' />
                             )}
                             <div className={styles.photoShawdow}></div>
                         </div>

@@ -18,13 +18,16 @@ export default function SimpleSlider() {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
+        centerPadding:'0px',
         arrows: false,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
+                    centerPadding:'10px',
+                    centerMode: true,
                     infinite: true,
                 }
             },
@@ -33,7 +36,8 @@ export default function SimpleSlider() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    initialSlide: 2
+                    initialSlide: 2,
+                    centerMode: true,
                 }
             },
             {
@@ -42,7 +46,9 @@ export default function SimpleSlider() {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 1,
-                    centerPadding: '0px'
+                    centerPadding: '0px',
+                    centerMode: true,
+
                 }
             },
             
@@ -51,29 +57,30 @@ export default function SimpleSlider() {
 
     const itemCard = [
         {
-            img: '/hihhi.png',
-            title: 'Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development',
+            img: '/img-slide1.png',
+            title: 'Live as if you were to die tomorrow. Learn as if you were to live forever.',
             owner: 'Krisztian Gyuris',
             position: 'Founder - inboxgenie.io'
         },
         {
-            img: '/hihhi.png',
-            title: 'Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development',
+            img: '/img-slide2.png',
+            title: 'Do what you can, with what you have, where you are',
+            owner: 'Mae',
+            position: 'Founder - maezsc.com'
+        },
+        {
+            img: '/img-slide1.png',
+            title: 'Live as if you were to die tomorrow. Learn as if you were to live forever.',
             owner: 'Krisztian Gyuris',
             position: 'Founder - inboxgenie.io'
         },
         {
-            img: '/hihhi.png',
-            title: 'Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development',
-            owner: 'Krisztian Gyuris',
-            position: 'Founder - inboxgenie.io'
+            img: '/img-slide2.png',
+            title: 'Do what you can, with what you have, where you are',
+            owner: 'Mae',
+            position: 'Founder -  maezsc.com'
         },
-        {
-            img: '/hihhi.png',
-            title: 'Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the future for Frontend development',
-            owner: 'Krisztian Gyuris',
-            position: 'Founder - inboxgenie.io'
-        },
+        
     ]
 
     return (

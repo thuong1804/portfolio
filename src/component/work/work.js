@@ -14,25 +14,39 @@ const WorkPage = ({ workRef }) => {
 
     const contentWork = [
         {
-            title: 'Title',
-            content: 'A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks',
-            skills: ['React', 'Typescript', 'React Bootstrap', 'Firebase', 'Express.js', 'MySql', 'Styled Components'],
-            img: '/hihhi.png',
-            link: <FontAwesomeIcon icon={faUpRightFromSquare} />
+            title: 'ThnkAndGrow-Blog',
+            content: 'The website specializes in posting articles related to installation, software, hardware, security, technology trends and technical instructions. This is a place to help programmers, software engineers and technology lovers stay up to date with the latest knowledge.',
+            skills: ['NextJs', 'Tailwind', 'Graphql', 'CSS Module', 'Apollo client'],
+            link: "https://daily.thnkandgrow.com/blog",
+            img: '/blog-logo.jpg',
         },
         {
-            title: 'Title',
-            content: 'A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks',
-            skills: ['React', 'Typescript', 'React Bootstrap', 'Firebase', 'Express.js', 'MySql', 'Styled Components'],
-            link: <FontAwesomeIcon icon={faUpRightFromSquare} />,
-            img: '/hihhi.png',
+            title: 'i-Test4u',
+            content: 'i-Test4u is a comprehensive online exam management platform pioneered by Dai Truong Phat Education Group with a rich database system.',
+            skills: ['NextJs', 'CSS Module', 'SASS/SCSS'],
+            link: "https://i-test4u.vn/",
+            img: '/logo-itest.svg',
         },
         {
-            title: 'Title',
-            content: 'A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks',
-            skills: ['React', 'Typescript', 'React Bootstrap', 'Firebase', 'Express.js', 'MySql', 'Styled Components'],
-            link: <FontAwesomeIcon icon={faUpRightFromSquare} />,
-            img: '/hihhi.png',
+            title: 'Eduhomex-CMS',
+            content: 'CMS is where website administrators can update and change content on the website.',
+            skills: ['React', 'Ant Design', 'Redux', 'MySql', 'SASS/SCSS', 'CSS Module'],
+            img: '/logo-eduhome.svg',
+            link: 'https://eduhome-cms-dev.dtpsoft.vn/'
+        },
+        {
+            title: 'i-Test-CMS',
+            content: 'CMS is where website administrators can update and change content on the website.',
+            skills: ['React', 'Ant Design', 'Redux', 'MySql', 'SASS/SCSS', 'CSS Module'],
+            link: 'https://i-test-cms-dev.dtpsoft.vn/',
+            img: '/logo-itest.svg',
+        },
+        {
+            title: 'LMS-CMS',
+            content: 'CMS is where website administrators can update and change content on the website.',
+            skills: ['React', 'Ant Design', 'Redux', 'MySql', 'SASS/SCSS', 'CSS Module'],
+            link: "https://lms-cms-dev.dtpsoft.vn/",
+            img: '/i-con-DTP.png',
         },
     ]
     return (
@@ -51,9 +65,9 @@ const WorkPage = ({ workRef }) => {
                         })}>
                             <div className={styles.left}>
                                 {isMobile ? (
-                                    <img src={item.img} width={300} height={250} alt='avatar' className={styles.img} />
+                                    <img src={item.img} width={300} height={250} alt='avatar' className={styles.img} style={index === 0 ? {objectFit:'none'}: {objectFit:'contain'}}/>
                                 ) : (
-                                    <img src={item.img} width={470} height={280} alt='avatar' className={styles.img} />
+                                    <img src={item.img} width={470} height={280} alt='avatar' className={styles.img} style={index === 0 ? {objectFit:'none'}: {objectFit:'contain'}}/>
                                 )}
                             </div>
                             <div className={styles.right}>
@@ -70,7 +84,9 @@ const WorkPage = ({ workRef }) => {
                                         )
                                     })}
                                 </div>
-                                <div>{item.link}</div>
+                                <a href={item.link} target="_blank">
+                                    <FontAwesomeIcon icon={faUpRightFromSquare} />
+                                </a>
                             </div>
                         </div>
                     )

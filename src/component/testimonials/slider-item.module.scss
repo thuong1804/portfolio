@@ -3,9 +3,16 @@
     min-height: 500px;
 }
 
+[class~="slick-track"] {
+    display: flex;
+    gap: 10px;
+}
+
+
 .container {
     max-width: 360px;
     margin-top: 30px;
+    padding: 0 10px;
 
     .card {
         display: flex;
