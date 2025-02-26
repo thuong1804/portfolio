@@ -14,7 +14,7 @@ const FooterLayout = () => {
     return (
         <div className={clsx(styles.container, theme === mode.DARK && styles.dark, isMobile && styles.mobile)}>
             <div className={styles.left}>
-                <FontAwesomeIcon icon={faCopyright} /> 2024
+                <FontAwesomeIcon icon={faCopyright} /> 2025
             </div>
             <a 
                 href="https://www.figma.com/community/file/1262992249991763120" 

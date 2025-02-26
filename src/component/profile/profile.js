@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandPeace, faLocationDot, faDotCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHandPeace, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTelegram, faSkype, faGithub } from '@fortawesome/free-brands-svg-icons';
 import MainContainer from '../../container/layout/main';
 import clsx from 'clsx';
@@ -21,19 +21,19 @@ const ProfilePage = ({profileRef}) => {
         {
             key: 'telegram',
             value: faTelegram,
-            link: 'https://www.facebook.com/Thuongpro40/'
+            link: 'https://t.me/thuong2x'
 
         },
         {
             key: 'skype',
             value: faSkype,
-            link: 'https://www.facebook.com/Thuongpro40/'
+            link: 'https://join.skype.com/invite/schwoInw4khL'
 
         },
         {
             key: 'github',
             value: faGithub,
-            link: 'https://www.facebook.com/Thuongpro40/'
+            link: 'https://github.com/thuong1804'
         },
     ]
 
@@ -50,20 +50,24 @@ const ProfilePage = ({profileRef}) => {
                             Hi, I'm Thuong Le <FontAwesomeIcon icon={faHandPeace} className={styles.icon} />
                         </h1>
                         <p>
-                            I'm a full stack developer (React.js & Node.js) with a focus on creating
-                            (and occasionally designing) exceptional digital experiences that are fast,
-                            accessible, visually appealing, and responsive. Even though I have been creating
-                            web applications for over 7 years, I still love it as if it was something new.
+                          I am a frontend developer with two years of experience, proficient in Next.js, React, JavaScript, and Node.js. 
+                          I am eager to apply my knowledge and skills to create meaningful contributions to the company. 
+                          With a strong commitment to continuous learning and innovation, I strive to bring value, efficiency, 
+                          and a positive impact to the organization
                         </p>
                     </div>
                     <div className={styles.containerDetail}>
                         <div className={styles.detail}>
                             <FontAwesomeIcon icon={faLocationDot} className={styles.iconLocation} />
-                            <p>location</p>
+                            <p>Ho Chi Minh city</p>
                         </div>
                         <div className={styles.detail}>
-                            <FontAwesomeIcon icon={faDotCircle} className={styles.iconStatus} />
-                            <p>status</p>
+                            <FontAwesomeIcon icon={faPhone} className={styles.iconStatus} />
+                            <p>0853908398</p>
+                        </div>
+                        <div className={styles.detail}>
+                            <FontAwesomeIcon icon={faEnvelope} className={styles.iconStatus} />
+                            <p>thuong123tvt@gmail.com</p>
                         </div>
                     </div>
                     <div className={styles.contactLink}>
@@ -79,9 +83,9 @@ const ProfilePage = ({profileRef}) => {
                 <div className={styles.avatar}>
                     <div className={styles.containerImg}>
                         {isMobile ? (
-                            <img src='/hihhi.png' height={250} width={200} alt='avatar' />
+                            <img src='/avatar.jpg' height={250} width={200} alt='avatar' style={{objectFit:'cover'}}/>
                         ) : (
-                            <img src='/hihhi.png' height={320} width={280} alt='avatar' />
+                            <img src='/avatar.jpg' height={320} width={280} alt='avatar' style={{objectFit:'cover'}}/>
                         )}
                         <div className={styles.photoShawdow}></div>
                     </div>

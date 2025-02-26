@@ -23,7 +23,7 @@ const ExperiencePage = ({ experienceRef }) => {
                         return (
                             <div className={styles.card}>
                                 <div className={styles.left}>
-                                    <span>{item.logo}</span>
+                                    <img src={item.logo} alt="logo" style={{objectFit:'cover'}}></img>
                                 </div>
                                 <div className={styles.center}>
                                     <h4>

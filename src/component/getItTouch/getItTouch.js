@@ -94,7 +94,7 @@ const GetItTouch = ({ contactRef }) => {
                         icon={faPhone}
                         className={styles.icon}
                     />
-                    +91 8980500565
+                    +84 853908398
                     <FontAwesomeIcon
                         icon={faCopy}
                         className={styles.icon2}
