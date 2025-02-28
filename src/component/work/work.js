@@ -61,7 +61,7 @@ const WorkPage = ({ workRef }) => {
                 {contentWork.map((item, index) => {
                     return (
                         <div className={clsx(styles.card, {
-                            [styles.reverseCard]: index === 1
+                            [styles.reverseCard]: index % 2 === 0
                         })}>
                             <div className={styles.left}>
                                 {isMobile ? (
