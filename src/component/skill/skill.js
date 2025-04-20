@@ -11,6 +11,8 @@ import Figma from "../../../src/assets/images/figma.svg";
 import Gitlab from "../../../src/assets/images/gitlab.svg";
 import Tailwind from "../../../src/assets/images/tailwind.svg";
 import NextDark from "../../../src/assets/images/next-dark.svg";
+import Nuxtjs from "../../../src/assets/images/nuxtjs.svg";
+import Vue from "../../../src/assets/images/vue.svg";
 
 import clsx from "clsx";
 import { mode } from "../../contants/index,";
@@ -70,6 +72,15 @@ const SkillPage = ({skillRef}) => {
         {
             name: 'Tailwind',
             icon: Tailwind,
+            link: 'https://tailwindcss.com/'
+        },
+        {
+            name: 'NuxtJs',
+            icon: Nuxtjs,
+            link: 'https://tailwindcss.com/'
+        },  {
+            name: 'Vue',
+            icon: Vue,
             link: 'https://tailwindcss.com/'
         },
     ]
