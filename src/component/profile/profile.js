@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPeace, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faTelegram, faSkype, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTelegram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import MainContainer from '../../container/layout/main';
 import clsx from 'clsx';
 import { mode } from '../../contants/index,';
@@ -25,10 +25,9 @@ const ProfilePage = ({profileRef}) => {
 
         },
         {
-            key: 'skype',
-            value: faSkype,
-            link: 'https://join.skype.com/invite/schwoInw4khL'
-
+            key: 'linkedin',
+            value: faLinkedinIn,
+            link: 'https://www.linkedin.com/in/l%C3%AA-ho%C3%A0i-th%C6%B0%C6%A1ng-17aa48257/'
         },
         {
             key: 'github',

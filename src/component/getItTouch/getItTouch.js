@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import MainContainer from '../../container/layout/main'
 import { faEnvelope, faCopy, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faFacebook, faSkype } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faFacebook, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './getItTouch.module.scss'
 import clsx from 'clsx'
@@ -27,9 +27,9 @@ const GetItTouch = ({ contactRef }) => {
             link: 'https://www.facebook.com/Thuongpro40/'
         },
         {
-            key: 'skype',
-            icon: faSkype,
-            link: 'https://join.skype.com/invite/schwoInw4khL'
+            key: 'linkedin',
+            icon: faLinkedinIn,
+            link: 'https://www.linkedin.com/in/l%C3%AA-ho%C3%A0i-th%C6%B0%C6%A1ng-17aa48257/'
         },
     ]
     
